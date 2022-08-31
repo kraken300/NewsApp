@@ -58,16 +58,6 @@ export class News extends Component {
     this.updateNews();
   }
 
-  handlePreviousClick = async () => {
-    this.setState({ page: this.state.page - 1 });
-    this.updateNews();
-  };
-
-  handleNextClick = async () => {
-    this.setState({ page: this.state.page + 1 });
-    this.updateNews();
-  };
-
   fetchMoreData = async () => {
     this.setState({ page: this.state.page + 1 });
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=1c401e1734f54a908cb2b6249141df5a&page=${this.state.page}&pageSize=${this.props.pageSize}`;
